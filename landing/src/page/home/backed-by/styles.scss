@@ -1,0 +1,38 @@
+
+
+.backed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+
+  margin-top: 40px;
+}
+
+.variable {
+  font-style: italic;
+
+  //@include lhCrop(1.4);
+}
+
+.plus {
+  margin: 0 10px;
+
+  //@include lhCrop(1.4);
+}
+
+.fraction {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-items: center;
+}
+
+.pad {
+  display: flex;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--cod-gray);
+}

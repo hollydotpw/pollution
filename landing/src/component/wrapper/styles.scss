@@ -1,0 +1,16 @@
+@use 'style/mixin';
+
+.headerPadding {
+  padding-top: var(--header-height);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 730px;
+  @include mixin.mobile {
+    width: 100%;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@typechain-contracts": [ "./typechain-types" ],
+    }
+  },
+  "include": ["./scripts", "./test", "./test/helpers", "./typechain-types"],
+  "files": ["./hardhat.config.ts"],
+  "ts-node": {
+    "swc": true
+  }
+}

@@ -1,0 +1,9 @@
+compatibility_date = "2021-12-14"
+name = "pollution"
+route = "pollution.holly.pw/*"
+send_metrics = false
+workers_dev = false
+main = "./dist/pollution-worker/entry.js"
+
+[site]
+bucket = "./dist/pollution-landing"

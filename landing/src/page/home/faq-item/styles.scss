@@ -1,0 +1,59 @@
+
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background: var(--bird-flower);
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  .q {
+    padding: 12px 20px;
+    cursor: pointer;
+
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    align-items: center;
+
+    svg {
+      margin-left: 20px;
+      transition: all 0.8s ease 0s;
+      fill: var(--cod-gray);
+
+      height: 1em;
+      width: auto;
+    }
+  }
+
+  .a {
+    padding: 0 20px;
+
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.8s ease 0s;
+
+    p {
+      margin-top: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &_open {
+    .a {
+      max-height: 600px;
+    }
+
+    .q svg {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .spacer {
+    margin-bottom: 20px;
+  }
+}

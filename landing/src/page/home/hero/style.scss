@@ -1,0 +1,255 @@
+@use 'style/mixin';
+
+.hide_mobile {
+  @include mixin.mobile {
+    display: none;
+  }
+}
+
+.show_mobile {
+  display: none;
+
+  @include mixin.mobile {
+    display: flex;
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  @include mixin.mobile {
+    width: 300px;
+  }
+
+  > div {
+    font-size: 20px;
+    padding-left: 30px;
+    margin-left: 30px;
+    border-left: 1px solid var(--bird-flower);
+
+    @include mixin.mobile {
+      &:first-child {
+        padding-left: 0px;
+      }
+
+      padding-left: 15px;
+      margin-left: 15px;
+      padding-top: 15px;
+      margin-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    &:first-child {
+      border-left: 0;
+      margin-left: 0;
+    }
+
+    &:last-child {
+      @include mixin.mobile {
+        padding-top: 15px;
+        padding-right: 15px;
+        margin-right: 15px;
+        border-left: 0;
+        border-top: 1px solid var(--bird-flower);
+      }
+    }
+
+    .title {
+      margin-bottom: 2px;
+      font-weight: bold;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.motd {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @include mixin.mobile {
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+}
+
+.typewriter {
+  font-size: 80px;
+  @include mixin.mobile {
+    font-size: 50px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    animation: unset;
+    border-right: 0;
+  }
+  font-weight: bolder;
+  overflow: hidden;
+  border-right: 0.15em solid var(--bird-flower);
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typingc 1.5s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typingc {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--bird-flower);
+  }
+}
+
+.motd_mobile {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+
+  @include mixin.mobile {
+    width: 100%;
+    img {
+      height: 55px;
+    }
+  }
+  border-bottom: 1px solid var(--bird-flower);
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0px, 10px);
+  }
+  0% {
+    transform: translate(0, 0);
+  }
+}
+
+.mouse {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  svg {
+    margin-bottom: 20px;
+    width: 45px;
+    height: 45px;
+    fill: var(--cod-gray);
+    animation-name: jump;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.loading {
+  display: flex;
+  div {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 20;
+
+  a {
+    margin-left: 15px;
+
+    > svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @include mixin.mobile {
+    left: 0;
+    bottom: 55px;
+
+    a {
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      > svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+.live {
+  display: flex;
+  align-items: center;
+  .round {
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: var(--stoplight);
+    width: 1em;
+    height: 1em;
+  }
+}

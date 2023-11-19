@@ -1,0 +1,98 @@
+@use 'style/mixin';
+
+.challenges {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  .challenge {
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+  }
+}
+
+.buy {
+  border: 1px solid var(--bird-flower);
+  background: var(--bird-flower);
+  padding: 10px 80px;
+  font-size: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+  &:hover {
+    border-color: var(--cod-gray);
+  }
+
+  @include mixin.mobile {
+    padding: 10px 30px;
+  }
+}
+
+.buy_container {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > svg {
+    width: 80px;
+    height: 80px;
+
+    @include mixin.mobile {
+      width: 50px;
+      height: 50px;
+    }
+
+    fill: var(--cod-gray);
+    animation: 1.5s linear infinite;
+
+    &:first-child {
+      animation-name: move;
+    }
+    &:last-child {
+      animation-name: move2;
+    }
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  0% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, 0);
+  }
+  0% {
+    transform: translate(0, 0);
+  }
+}
+
+.genius {
+  font-size: 20px;
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed {
+  height: 38px;
+
+  @include mixin.mobile {
+    height: auto;
+  }
+}

@@ -1,0 +1,58 @@
+on:
+  push:
+    branches:    
+      - master 
+
+jobs:
+  build-coin:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./coin
+    steps:
+    - uses: actions/checkout@v4
+    - uses: oven-sh/setup-bun@v1
+    - name: Install dependencies
+      run: bun install
+  test-coin:
+    needs: build-coin
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./coin
+    steps:
+    - uses: actions/checkout@v4
+    - uses: oven-sh/setup-bun@v1
+    - name: Install dependencies
+      run: bun install
+    - name: Running tests
+      run: bun run test
+  build-landing:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./landing
+    steps:
+    - uses: actions/checkout@v4
+    - uses: oven-sh/setup-bun@v1
+    - name: Install dependencies
+      run: bun install
+    - name: Build project
+      run: bunx xyster prod
+  build-miner:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./miner
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: nightly
+    - name: Build project
+      uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --release --manifest-path ./miner/Cargo.toml

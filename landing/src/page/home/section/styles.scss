@@ -1,0 +1,29 @@
+@use 'style/mixin';
+
+.section {
+  padding-top: 10px;
+  margin-bottom: 50px !important;
+
+  &:first-child {
+    margin-top: 60px !important;
+  }
+  @include mixin.mobile {
+    margin: 0 24px;
+  }
+
+  p {
+    word-break: break-word;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: justify;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  > .title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: var(--bird-flower);
+  border-bottom: 1px solid black;
+}
+
+.align {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-right: 10px;
+  }
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bird-flower);
+  padding: 10px 20px;
+
+  .number {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  .reward {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    .r {
+      display: flex;
+      align-items: center;
+      width: 58px;
+      svg {
+        margin-right: -5px;
+      }
+    }
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    //margin: 0 30px;
+
+    > * {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.both {
+  display: flex;
+}

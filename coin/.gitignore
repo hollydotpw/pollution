@@ -1,0 +1,10 @@
+node_modules
+cache
+artifacts
+abi
+checkpoints.json
+package-lock.json
+typechain
+.env
+typechain-types
+.swc

@@ -1,0 +1,58 @@
+@use 'style/font/chivo';
+@use 'style/variable';
+@use 'style/color';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  background: var(--ripe-lemon);
+  color: var(--cod-gray);
+  font-family: Chivo, sans-serif;
+  line-height: 1.2;
+  scroll-padding-top: var(--header-height);
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: unset;
+  font-size: unset;
+  font-weight: unset;
+  margin-block-start: unset;
+  margin-block-end: unset;
+  margin-inline-start: unset;
+  margin-inline-end: unset;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+}
+
+img {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}

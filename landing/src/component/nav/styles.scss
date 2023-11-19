@@ -1,0 +1,11 @@
+.buy {
+  border: 1px solid var(--bird-flower);
+  padding: 10px 40px;
+  text-transform: uppercase;
+  background: var(--bird-flower);
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--cod-gray);
+  }
+}
