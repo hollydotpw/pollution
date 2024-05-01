@@ -1,7 +1,6 @@
 {
   "name": "pollution-landing",
   "dependencies": {
-    "@cloudflare/kv-asset-handler": "^0.3.0",
     "mdi-preact": "^7.1.0",
     "pekoo": "^0.1.5",
     "preact": "^10.19.2",
@@ -21,14 +20,9 @@
   },
   "x": [
     {
-      "name": "pollution-landing",
+      "name": "pollution-web",
       "preset": "browser-preact",
       "entry": "./src/entry.tsx"
-    },
-    {
-      "name": "pollution-worker",
-      "preset": "webworker-preact",
-      "entry": "./src/entry-worker.tsx"
     }
   ]
 }

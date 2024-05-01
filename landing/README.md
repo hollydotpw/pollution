@@ -5,6 +5,7 @@ This is the source code of the pollution landing page.
 ```
 Bun: >=1.0.13  
 Wrangler: >=3.16.0  
+X: `>=0.1.0`
 ```
 
 ## Setup
@@ -16,12 +17,15 @@ bun install
 ## Building
 
 ### Development
+Run the following command to start the development server:
 ```bash
 x dev
 ```
 
 ### Production
+Run the following command to build and deploy the project:
+
 ```bash
 x prod
-wrangler deploy
+bunx wrangler pages deploy ./dist/pollution-web --no-bundle --commit-dirty --project-name pollution
 ```
